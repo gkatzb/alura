@@ -26,16 +26,4 @@ angular.module("alurapic")
           })
         };
 
-        /*$scope.editar = function(foto){
-          $http.("/v1/fotos/"+foto._id)
-          .success(function(){
-            var indiceDaFoto = $scope.fotos.indexOf(foto);
-            $scope.fotos.splice(indiceDaFoto, 1);
-            $scope.mensagem = "Foto " + foto.titulo + " editada com sucesso!";
-          })
-          .error(function(erro){
-            $scope.mensagem = "Nao foi possivel editar a foto " + foto.titulo;
-          })
-        };*/
-
        })

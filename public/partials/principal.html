@@ -26,8 +26,14 @@
     </div>
     <div class="panel-footer">
       <div class="text-center col-md-12">
-        <button name="btn-remove" id="btn-remove" ng-click="remover(foto)" class="btn btn-foto pull-left btn-remove btn-danger btn-block"><i class="fa fa-1x fa-trash"></i></button>
-        <a name="btn-edit" id="btn-edit" href="/fotos/edit/{{foto.id}}" class="btn btn-foto btn-edit pull-right btn-primary btn-block"><i class="fa fa-1x fa-pencil"></i></a>
+        <!--<button name="btn-remove" id="btn-remove" ng-click="remover(foto)" class="btn btn-foto pull-left btn-remove btn-danger btn-block"><i class="fa fa-1x fa-trash"></i></button>
+        <a name="btn-edit" id="btn-edit" href="/fotos/edit/{{foto.id}}" class="btn btn-foto btn-edit pull-right btn-primary btn-block"><i class="fa fa-1x fa-pencil"></i></a>-->
+        <botao-acao button="button" nome="btn-remove" id="btn-remove" classe="btn btn-foto pull-left btn-remove btn-danger btn-block" acao="remover(foto)">
+          <i class='fa fa-1x fa-trash'></i>
+        </botao-acao>
+        <botao-acao link="link" nome="btn-edit" id="btn-edit" href="/fotos/edit/{{foto.id}}" classe="btn btn-foto btn-edit pull-right btn-primary btn-block">
+          <i class="fa fa-1x fa-pencil"></i>
+        </botao-acao>
       </div>
     </div>
 </meu-painel>
