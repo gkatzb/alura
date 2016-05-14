@@ -22,7 +22,7 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
     }
   }
 
-  if($routeParams.fotoId){
+  /*if($routeParams.fotoId){
     $http.get('/v1/fotos/' + $routeParams.fotoId)
     .success(function(foto){
         $scope.foto = foto
@@ -30,5 +30,5 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
     .error(function(erro){
       $scope.mensagem = 'Nao foi possivel obter a foto';
     })
-  }
+  }*/
 })
