@@ -1,4 +1,4 @@
-angular.module("alurapic", ["minhasDirectivas", "ngAnimate", "ngRoute"])
+angular.module("alurapic", ["minhasDirectivas", "ngAnimate", "ngRoute", "meusServicos"]) // ngResource: arq separado -- bluebird.promisipy(api.get)
   .config(function($routeProvider, $locationProvider){
     $locationProvider.html5Mode(true);
 
@@ -18,4 +18,4 @@ angular.module("alurapic", ["minhasDirectivas", "ngAnimate", "ngRoute"])
     });
 
     $routeProvider.otherwise({redirectTo: "/fotos"});
-  });
+  })
