@@ -1,0 +1,44 @@
+<h1>Cadastro</h1>
+<div class="page-header text-center">
+  <h1>{{foto.titulo}}</h1>
+  <p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+</div>
+
+<form class="row" ng-submit="submeter()" novalidate name="formulario">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" name="titulo" class="form-control" ng-model="foto.titulo" required maxlength="20">
+      <span ng-show="formulario.$submitted && formulario.titulo.$error.required" class="form-control alert-danger">
+        Titulo obrigatorio
+      </span>
+      <span ng-show="formulario.$submitted && formulario.titulo.$error.maxlength" class="form-control alert-danger">
+        Maximo de 20 caracteres
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="url" name="url" class="form-control" ng-model="foto.url" required>
+      <span ng-show="formulario.$submitted && formulario.url.$error.required" class="form-control alert-danger">
+        URL obrigatoria
+      </span>
+      <span ng-show="formulario.$submitted && formulario.url.$error.url" class="form-control alert-danger">
+        A informacao digitada deve ser uma URL
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descricao</label>
+      <textarea type="descricao" name="descricao" class="form-control" ng-model="foto.descricao" maxlength="245"></textarea>
+      <span ng-show="formulario.$submitted && formulario.titulo.$error.required" class="form-control alert-danger">
+        Maximo de 245 carcteres
+      </span>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">Salvar</button>
+    <a href="/" class="btn btn-primary">Voltar</a>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+  </div>
+</form>

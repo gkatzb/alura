@@ -1,0 +1,33 @@
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+<div class="row">
+  <div class="col-md-12">
+    <form>
+      <div class="form-group">
+        <div class="col-md-8">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <a href="/fotos/new" class="btn btn-primary" type="button">
+                Nova foto
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <input class="form-control pull-right" placeholder="filtrar" ng-model="filtro" ng-model-options="{debounce:1000}">
+        </div>
+    </form>
+    </div>
+    <div class="col-md-12"><hr></div>
+  </div>
+</div>
+<meu-painel class="painel-animado" titulo="{{ foto.titulo }}" ng-repeat="foto in fotos | filter: {titulo: filtro}">
+    <div class="panel-img">
+      <minha-foto url="{{ foto.url }}" titulo="{{ foto.titulo }}"></minha-foto>
+    </div>
+    <div class="panel-footer">
+      <div class="text-center col-md-12">
+        <button name="btn-remove" id="btn-remove" ng-click="remover(foto)" class="btn btn-foto pull-left btn-remove btn-danger btn-block"><i class="fa fa-1x fa-trash"></i></button>
+        <a name="btn-edit" id="btn-edit" href="/fotos/edit/{{foto.id}}" class="btn btn-foto btn-edit pull-right btn-primary btn-block"><i class="fa fa-1x fa-pencil"></i></a>
+      </div>
+    </div>
+</meu-painel>
